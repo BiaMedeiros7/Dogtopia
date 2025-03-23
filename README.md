@@ -19,10 +19,12 @@ O objetivo do projeto é permitir que os clientes de um petshop agendem serviço
 
 ## Tecnologias Utilizadas
 
+- **JavaScript**: Para a parte da lógica no arq. dogtopia-jogo-da-sorte.html
 - **HTML**: Para estruturação das páginas web.
 - **CSS**: Para estilização e design da interface.
 - **PHP**: Para integrar o frontend com o banco de dados e tratar as requisições de agendamento.
 - **MySQL**: Para armazenamento dos dados de agendamento no banco de dados.
 - **Apache**: Servidor local para rodar o projeto de forma local no meu computador durante o desenvolvimento.
+
 
 
