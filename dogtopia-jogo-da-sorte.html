@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="logoPNG.png" type="image/x-icons"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogtopia - Promoção</title>
+    <link rel="stylesheet" href="dogtopia.css">
+</head>
+<body class="sorte">
+    <div class="wrapper-promo">
+    <div class="header-sorte">
+    <header>
+        <img src="logoPNG.png" alt="" class="header-img" >
+        <nav class="navegacao">
+            <a href="http://127.0.0.1:5500/dogtopia-home.html">Home</a>
+            <a href="http://127.0.0.1:5500/dogtopia-sobre.html">Sobre</a>
+            <a href="http://127.0.0.1:5500/dogtopia-servicos.html">Serviços</a>
+            <a href="http://127.0.0.1:5500/dogtopia-contato.html">Contato</a>
+            <a href="http://127.0.0.1:5500/dogtopia-jogo-da-sorte.html">Promoção</a>
+            <button type="submit" class="botaoLogin">Login</button>
+        </nav>
+    </header>
+</div>
+<div class="wrapper-sorte1">
+    <h1 class="sorte">Informações:</h1>
+    <p class="sorte">
+        Na sua primeira experiência com a Dogtopia, você poderá ganhar até <strong>15% de desconto</strong>!
+        Participe do nosso jogo da sorte e veja a chance de economizar:
+    </p> <br>
+    <ul class="sorte">
+        <li class="sorte"><strong>6 acertos:</strong> 15% de desconto</li>
+        <li class="sorte"><strong>5 acertos:</strong> 12% de desconto</li>
+        <li class="sorte"><strong>3-4 acertos:</strong> 8% de desconto</li>
+        <li class="sorte"><strong>1-2 acertos:</strong> 5% de desconto</li>
+    </ul>
+</div>
+
+<div class="wrapper-sorte2">
+    <h1 class="sorte">Jogo da Sorte</h1>
+<br>
+<p class="sorte">Digite seus números da sorte aqui: (números de 1 á 100 e precisam estar separados por vírgula)</p>
+<input type="text" id="numerosUsuario" placeholder="Ex: 1, 2, 3, 4, 5, 6">
+<br>
+<button id="botaoSorte" onclick="jogar()">Verificar Sorte</button>
+<p id="resultado"></p>
+<div id="numero"></div>
+</div>
+    <script>
+  function jogar() {
+            
+            let input = document.getElementById("numerosUsuario").value;
+            let numerosUsuario = input.split(",").map(Number);
+
+            
+            if (numerosUsuario.length !== 6 || numerosUsuario.some(n => isNaN(n) || n < 1 || n > 100)) {
+                document.getElementById("resultado").innerText = "Por favor, digite 6 números válidos entre 1 e 100.";
+                return;
+            }
+
+            
+            let numerosAleatorios = [];
+            while (numerosAleatorios.length < 6) {
+                let numero = Math.floor(Math.random() * 100) + 1;
+                if (!numerosAleatorios.includes(numero)) {
+                    numerosAleatorios.push(numero);
+                }
+            }
+
+            
+            let acertos = 0;
+            numerosUsuario.forEach(numero => {
+                if (numerosAleatorios.includes(numero)) {
+                    acertos++;
+                }
+            });
+
+            
+            if (acertos === 6) {
+                document.getElementById("resultado").innerText = `Parabéns! Você acertou ${acertos} número(s). Você ganhou 15% de desconto na sua primeira experiência com a Dogtopia.`;
+            } 
+            if (acertos === 5) {
+                document.getElementById("resultado").innerText = `Parabéns! Você acertou ${acertos} número(s). Você ganhou 12% de desconto na sua primeira experiência com a Dogtopia.`;
+            } 
+            if (acertos === 3 ||acertos ===4) {
+                document.getElementById("resultado").innerText = `Parabéns! Você acertou ${acertos} número(s). Você ganhou 8% de desconto na sua primeira experiência com a Dogtopia.`;
+            } 
+            if (acertos === 1 ||acertos ===2) {
+                document.getElementById("resultado").innerText = `Parabéns! Você acertou ${acertos} número(s). Você ganhou 5% de desconto na sua primeira experiência com a Dogtopia.`;
+            } 
+        }
+
+    </script>
+    </div>
+</body>
+</html>

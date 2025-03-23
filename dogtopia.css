@@ -1,9 +1,3 @@
-*{ 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: sans-serif;
-}
 
 /*HEADER NAVEGAÇÃO:GERAL*/
 header{
@@ -12,7 +6,7 @@ header{
     left: 0;
     width: 100%; 
     padding: 20px 60px;
-    background-color: #221408c9;
+    background-color: #221408e3;
     display: flex; 
     justify-content: space-between;
     align-items: center;
@@ -31,13 +25,21 @@ header{
     margin-left: 0; 
 }
 
+.navegacao {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+}
+
 .navegacao a{
     position: relative; 
-    font-size: 1.1em; 
+    font-size: 1.3em; 
     color: rgb(255, 255, 255);
     text-decoration: none; 
     font-weight: 500; 
     margin-left: 40px;
+    font-family: 'Playfair Display'
+    
     
 }
 
@@ -55,6 +57,7 @@ header{
   
 }
 
+
 .navegacao a:hover:after{
     transform: scaleX(1);
 }
@@ -70,8 +73,11 @@ header{
     font-size: 1.1em;
     color: #fff;
     font-weight: 500;
-    margin-left: 1100px;
+    margin-left: 100px;
     transition: .5s;
+    margin-left: auto;
+    margin-right: 100px;
+    
 }
 
 .navegacao .botaoLogin:hover {
@@ -82,19 +88,27 @@ header{
 /*COMEÇO PÁGINA DE CONTATO*/
 
 body.contato{
-    
+    margin: 0;
     justify-content:center;
     align-items:center; 
-    flex-direction: column; /* wrappers em coluna */
+    flex-direction: column;  
     min-height: 100vh; 
     background: url(pegadasbackground.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
 }
 
+.wrapper-contato{
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0;
+    background-color: #ece6e1ec;
+    
+}
 .wrapper2, .wrapper1 { 
-    width: 300px;
-    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border: 2px solid #271709e7;
@@ -103,17 +117,17 @@ body.contato{
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-   
 }
 .wrapper2 {
     width: 350px;
-    height: auto; 
-    margin-top: 140px;
+    height: 450px; 
+    
 }
 
 .wrapper2 .form-box {
-    width: 100%;
-    padding: 30px;
+    width: 350px;
+    height: 450px; 
+   
 }
 
 
@@ -121,7 +135,8 @@ body.contato{
     font-size: 2em;
     color: #221408e7;
     text-align: center;
-    margin-bottom: 80px;
+    
+    
 }
 
 .input-box { /*linha*/
@@ -129,7 +144,7 @@ body.contato{
     width: 100%;
     height: 40px;
     border-bottom: 2px solid #271709e7;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .input-box label {
@@ -137,9 +152,7 @@ body.contato{
     top: 50%;
     left: 5px;
     transform: translateY(-50%); 
-    font-size: 1em;
-    color: #162938;
-    font-weight: 500;
+    color: #221408;
     pointer-events: none;
     transition: .5s;
 }
@@ -172,12 +185,14 @@ body.contato{
     font-size: 1em;
     color: #fff;
     font-weight: 500;
-    margin-top: 70px;
+    
 }
 
 .wrapper1 {
     width: 300px;
     height: auto;
+    margin-bottom: -80px;
+    margin-top: 20px;
     
 }
 
@@ -194,7 +209,6 @@ body.contato{
     align-self: flex-start;
     margin: 10px 0;
 }
-
 
 
 /*COMEÇO PÁGINA HOME*/
@@ -247,7 +261,7 @@ body.home {
     display: flex;
     min-height: 100vh;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 112px;
     
 }
 
@@ -259,6 +273,7 @@ body.home {
 
 .right-half {
     flex: 1;
+    margin-right: -10px;
     background-color: #e2d9d0fb;
     display: flex;
     align-items: center;
@@ -281,7 +296,7 @@ body.home {
 }
 
 .right-half .botaoServico{
-    width: 30%;
+    width: 150%;
     height: 45px;
     background: #271709e7;
     border: none;
@@ -306,7 +321,7 @@ body.sobre{
 
 .wrapper-sobre {
     min-height: 100vh;
-    background-color: #e2d9d0f8; 
+    background-color: #ece6e1ec;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -354,139 +369,349 @@ body.sobre{
     
 }
 
-.header-sobre {
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    width: 100%;
-    padding: 60px 60px;
-    background: url(pegadasbackground.jpeg) no-repeat ;
-    background-size: cover;
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99; 
-}
-
-
-.header-sobre::before {
-    content: ""; /* pseudo-elemento */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.5); 
-    z-index: -1; 
-}
-
 /*COMEÇO PÁGINA DE SERVIÇOS*/
 
 body.servicos{
-    margin: 0;
-    padding: 0;
+    min-height: 100vh; 
     background: url(pegadasbackground.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
+    margin: 0;
 }
 
-.header-servicos {
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    width: 100%;
-    padding: 60px 60px;
-    background: url(pegadasbackground.jpeg) no-repeat ;
-    background-size: cover;
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99; 
-}
 
-.header-servicos::before {
-    content: ""; /* pseudo-elemento */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.5); 
-    z-index: -1; /* Coloca a camada abaixo do conteúdo */
-}
-.wrapper-servicos {
+.wrapper-servicos { /*container pai*/
+    min-height: 100vh; 
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 20px;
-    margin-top: 120px;
-    background-color: #e2d9d0f5;
+    justify-content: center;
+    background-color: #ece6e1ec;
+    align-items: center; 
 }
 
 .wrapper-servicos .container {
-    width: 400px;
-    height: auto;
-    background-color: #f0efef;
+    width: 395px;
+    height: 444px;
+    display: block;
+    align-self: center;
+    background-color: #e2d9d0fb;
     text-align: center;
     border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 40px;
+    border-radius: 30px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px 100px; 
-}
-
-.wrapper-servicos .container h4 {
-    font-size: 30px;
-    font-family: 'Playfair Display';
-    color: #221408;
-    margin-bottom: 5px;
-}
-
-.wrapper-servicos .container p {
-    font-family: 'Playfair Display';
-    color: #221408;
-    text-align: center;
-    font-size: 1.3em;
-    font-weight: 600;
+    margin: auto ;
+    margin-top:100px ;
+    transition: transform 0.3s ease; /* Suaviza a transformação */
+    cursor: pointer; 
+    margin-bottom: 50px;
     
 }
 
-.wrapper-servicos .container .obs {
-    font-size: 0.9em;
-    font-weight: 500;
-    margin-bottom: -15px;
+.wrapper-servicos a{
+    
+    color: inherit;
+    color:#221408 ;
+    text-decoration: none;
 }
-.wrapper-servicos .container ul {
-    padding: 0; /* Remove o espaçamento padrão da lista */
+
+
+.wrapper-servicos .container:hover {
+    transform: scale(1.05); /* Aumenta o tamanho em 5% */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para destacar */
+}
+
+.container img{
+width: 371px;
+height: 274px;
+border-radius: 30px;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+margin-top: 10px;
+
+}
+
+.wrapper-servicos h2 { 
+    color: #221408f3;
+    font-size: 4em; 
+    font-family: 'Playfair Display';
+    width: 100%;
+    height: 0;
+    margin: 0;
+    text-align: center;
+    margin-top: 100px;
+
+
+}
+
+
+
+.wrapper-servicos h3{
+font-size: 2em;
+color: #221408f3;
+}
+
+
+
+
+
+/*JOGO DA SORTE PROMOÇÃO */
+
+body.sorte{ 
+    min-height: 100vh; 
+    background: url(pegadasbackground.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    
+}
+
+.wrapper-promo { /*container pai*/
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0;
+    background-color: #ece6e1ec;
+}
+
+.wrapper-sorte2, .wrapper-sorte1{
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #271709e7;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.wrapper-sorte1{ /*infos*/
+    width: 700px;
+    height: 200px; 
+    margin-top: 100px;
+    font-family: 'Lucida Sans';
+    
+}
+.wrapper-sorte2{ /*jogo*/
+    width: 400px;
+    height: auto; 
+    margin-top: 40px;
+    
+}
+.sorte ul{
+    font-family: 'Lucida Sans';
+    font-size: 16px;
+    margin-top: -10px
+}
+
+.sorte h1{
+    font-size: 3em;
+    font-family: 'Playfair Display';
+    color: #221408;
+    margin: 0;
+ 
+}
+
+.sorte p{
+    font-family: 'Lucida Sans';
+}
+
+#botaoSorte { 
+    background: #271709e7;
+    border: none;
+    outline: none;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 17px 20px;
+    
+}
+
+#numerosUsuario{
+    width: 70%;               
+    padding: 15px;            
+    font-size: 16px;          
+    border: 2px solid #271709; 
+    border-radius: 8px;       
+    outline: none;             /* tira o contorno padrão do foco */
+    background-color: #f2f2f2; 
+    color: #333;
+    margin-top: 20px;
+}
+
+#resultado{
+    font-family: 'Lucida Sans';
+    margin-top: 20px;
+}
+
+/* PARTE DOS PACOTES*/
+
+
+body.pacotes{
+    min-height: 100vh; 
+    background: url(pegadasbackground.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+   
+}
+
+.wrapper-pacotes { /*container pai*/
+    min-height: 100vh; 
+    display: flex;
+    padding: 0;
+    background-color: #ece6e1ec;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+
+.infos-pacote, .agendamento-pacote{
+    display: flex;
+    align-self: center;
+    background-color: #e9e1da;;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+    margin-bottom: -50px;
+    
+    
+
+}
+.infos-pacote{ /* é o da esquerda*/
+    width: 395px;
+    height: 620px;
+    flex-direction: column; 
+    
+}
+
+.infos-pacote h4{
+    font-size: 2em;
+    margin: 20px;
+    color: #221408;
+    
+    
+}
+
+.infos-pacote p {
+    font-family: 'Playfair Display';
+    color: #221408;
+    text-align: center;
+    
+    
+}
+
+.infos-pacote .obs {
+    font-weight: 500;
+    color: #221408;
+    padding: 5px;
+
+}
+
+.infos-pacote ul {
+    padding: 0; 
     list-style-type: none; /* Remove o marcador da lista */
     margin: 0;
 }
-.wrapper-servicos .container li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.infos-pacote li {
     font-size: 1.1em;
     font-weight: 500;
     font-family: 'Playfair Display';
+    margin: 2px auto;
     color: #221408;
-    margin: -15px;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 1px;
+    text-align: start;
+    margin-left: 110px;
+   
+}
+
+.agendamento-pacote{ 
+    width: 395px;
+    height: 620px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+    
+}
+
+.agendamento-pacote h4 {
+    font-size: 2em;
+    margin: 20px;
+    color: #221408;
+    
+    
 }
 
 
-.wrapper-servicos h1 {
+.agendamento-pacote label {
     color: #221408;
-    font-size: 4em;
-    margin-top: 19px;
-    font-family: 'Playfair Display';
+    display: block;
+    font-size: 1.1em;
+    
+}
+
+
+.agendamento-pacote input[type="text"],
+.agendamento-pacote input[type="date"],
+.agendamento-pacote textarea {
     width: 100%;
-    text-align: center;
-    margin: 10px 0;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+/* Espaçamento para o texto das perguntas */
+.agendamento-pacote p {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color:#221408;
 }
 
 
+.agendamento-pacote input[type="radio"] {
+    margin-right: 5px;
+}
 
+
+.agendamento-pacote textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+
+.botaoEnviar-pacotes {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color:#f8f8f8;
+    background-color: #221408e8;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.mensagem-sucesso{
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #221408;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    z-index: 1000;
+    text-align: center;
+}
